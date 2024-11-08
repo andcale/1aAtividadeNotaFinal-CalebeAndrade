@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100dvh;
+            background-color: #00a36d;
+        }
+
+        #container {
+            min-width: 300px;
+            background-color: #ffffff;
+            padding: 40px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 15px;
+            color: #fffffff1;
+        }
+
+        form {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        label img {
+            width: 24px;
+            margin-right: 8px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            resize: none;
+            min-height: 80px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333333;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #555555;
+        }
+
+        #message {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <form action="" method="" id="contactForm">
+            <div>
+                <h1>Entre em Contato</h1>
+            </div>
+
+            <label for="nome">
+                <img src="https://img.icons8.com/?size=100&id=11779&format=png&color=000000" alt="personIcon">
+                <input type="text" name="nome" id="inputNome" placeholder="Nome" required>
+            </label>
+
+            <label for="email">
+                <img src="https://img.icons8.com/?size=100&id=12623&format=png&color=000000" alt="emailIcon">
+                <input type="email" name="email" id="inputEmail" placeholder="Email" required>
+            </label>
+
+            <label for="telefone">
+                <img src="https://img.icons8.com/?size=100&id=9729&format=png&color=000000" alt="telIcon">
+                <input type="tel" name="telefone" id="inputTel" placeholder="Telefone" required>
+            </label>
+
+            <label for="msg" id="msg">
+                <textarea name="msg" id="msg" placeholder="Digite sua mensagem" required></textarea>
+            </label>
+
+            <button type="submit">Enviar</button>
+            <p id="message"></p>
+        </form>
+    </div>
+    <footer>
+        <p>Criado por Calebe de Andrade</p>
+    </footer>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const messageElement = document.getElementById('message');
+            messageElement.textContent = 'Formulário enviado com sucesso!';
+        })
+    </script>
+</body>
+
+</html>

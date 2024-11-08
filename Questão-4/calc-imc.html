@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #b1d8ff;
+        }
+
+        #container {
+            width: 90%;
+            max-width: 600px;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 26px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            color: #ffffff;
+        }
+
+        #titulo {
+            width: 100%;
+            background-color: #4a90e2;
+            padding: 15px;
+            border-radius: 12px 12px 0 0;
+        }
+
+        fieldset {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            flex-direction: column;
+            border: none;
+            padding: 20px;
+        }
+
+        label>p {
+            margin: 5px 0;
+            font-weight: bold;
+            font-size: 15px;
+            color: #5a5a5a;
+        }
+
+        #calculate {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #221eee;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        #calculate:hover {
+            background-color: #7ed6df;
+            /* Cor do botão ao passar o mouse */
+        }
+
+        .inputs {
+            width: 140px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #bdc3c7;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .inputs:focus {
+            border-color: #4a90e2;
+        }
+
+        #table-info {
+            margin: 20px 0;
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            color: #2d3436;
+            overflow: hidden;
+        }
+
+        #table-info th,
+        #table-info td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        #table-info th {
+            background-color: #4a90e2;
+            color: #ffffff;
+        }
+
+        #result {
+            color: #383838;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        footer{
+            margin-top: 20px;
+            font-size: 14px;            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="titulo">
+            <h1>Calculadora IMC</h1>
+        </div>
+
+        <fieldset>
+            <label for="peso">
+                <p>Peso (Kg)</p>
+            </label>
+            <input type="number" class="inputs" id="inputWeight" placeholder="Digite seu peso">
+            <label for="altura">
+                <p>Altura em metros (Ex: 1.70)</p>
+            </label>
+            <input type="number" class="inputs" id="inputHeight" placeholder="Digite sua altura">
+            <button type="submit" id="calculate">Calcular</button>
+        </fieldset>
+
+        <div id="result"></div>
+
+        <table id="table-info">
+            <thead>
+                <tr>
+                    <th>IMC</th>
+                    <th>Classificação</th>
+                    <th>Obesidade (Grau)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="imc">Menor que 18,5</td>
+                    <td>Magreza</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td class="imc">Entre 18,5 e 24,9</td>
+                    <td>Normal</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td class="imc">Entre 25,0 e 29,9</td>
+                    <td>Sobrepeso</td>
+                    <td>I</td>
+                </tr>
+                <tr>
+                    <td class="imc">Entre 30,0 e 39,9</td>
+                    <td>Obesidade</td>
+                    <td>II</td>
+                </tr>
+                <tr>
+                    <td class="imc">Maior que 40,0</td>
+                    <td>Obesidade Grave</td>
+                    <td>III</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer>
+        <p>Criado por Calebe de Andrade</p>
+    </footer>
+    <script>
+        const calcBtn = document.querySelector('#calculate');
+        const divResult = document.querySelector('#result');
+
+        calcBtn.addEventListener('click', () => {
+            const weight = Number(document.querySelector('#inputWeight').value);
+            const height = Number(document.querySelector('#inputHeight').value);
+
+            divResult.innerHTML = '';
+
+            if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+                divResult.innerHTML = 'Digite os dados corretamente.';
+                return;
+            }
+            const result = weight / (height * height);
+
+            let classification = '';
+            if (result < 18.5) {
+                classification = 'Magreza';
+            } else if (result >= 18.5 && result < 24.9) {
+                classification = 'Normal';
+            } else if (result >= 25 && result < 29.9) {
+                classification = 'Sobrepeso';
+            } else if (result >= 30 && result < 39.9) {
+                classification = 'Obesidade';
+            } else {
+                classification = 'Obesidade Grave';
+            }
+
+            divResult.innerHTML = `Seu IMC é de ${result.toFixed(2)} e possui classificação ${classification}`;
+        });
+    </script>
+</body>
+
+</html>

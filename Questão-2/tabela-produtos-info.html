@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Produtos Informática</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: rgb(220, 240, 220);
+        }
+
+        #container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: rgb(9, 53, 9);
+        }
+
+        .table-wrapper {
+            width: 1400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #main-table {
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+            background-color: rgb(242, 255, 242);
+        }
+
+        #tr-title th {
+            background-color: rgb(42, 43, 42);
+            color: rgb(255, 255, 255);
+            text-transform: uppercase;
+            padding: 15px;
+        }
+
+        #list-itens td {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            color: rgb(0, 0, 0);
+        }
+
+        #list-itens tr:nth-child(even) {
+            background-color: rgb(157, 240, 157);
+        }
+
+        #list-itens tr:nth-child(odd) {
+            background-color: rgb(230, 245, 230);
+        }
+
+        #list-itens tr:hover {
+            background-color: rgb(180, 220, 180);
+        }
+
+        p {
+            margin-top: 30px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Tabela de Produtos Informática</h1>
+        <div class="table-wrapper">
+            <table id="main-table">
+                <thead>
+                    <tr id="tr-title">
+                        <th>Produto</th>
+                        <th>Descrição</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody id="list-itens">
+                    <tr>
+                        <td>Smartphone</td>
+                        <td>Samsung Galaxy S24 Plus 5G Dual SIM 256 GB Preto 12 GB RAM</td>
+                        <td>R$ 4.599,99</td>
+                    </tr>
+                    <tr>
+                        <td>Monitor</td>
+                        <td>Monitor LG UHD 4K - Tela de 32", 4K, DCI-P3 90%, HDMI, Display Port, HDR10, AMD Free Sync
+                        </td>
+                        <td>R$ 1.815,99</td>
+                    </tr>
+                    <tr>
+                        <td>Notebook</td>
+                        <td>Notebook Avell Avell B.On 145</td>
+                        <td>R$ 2.899,00</td>
+                    </tr>
+                    <tr>
+                        <td>Roteador</td>
+                        <td>Roteador TP-Link EX511 WI-FI 6 AX3000 Dual Band Gigabit</td>
+                        <td>R$ 215,00</td>
+                    </tr>
+                    <tr>
+                        <td>Computador</td>
+                        <td>Computador Dell OptiPlex 12a geração Intel Core i7 16GB 512G Windows 11</td>
+                        <td>R$ 6.251,99</td>
+                    </tr>
+                    <tr>
+                        <td>Nobreak</td>
+                        <td>Nobreak SMS PRO Line Interactive Senoidal Por Aproximação PWM 1500VA Bivolt</td>
+                        <td>R$ 1.119,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Criado por Calebe de Andrade</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão de Apresentação Pessoal</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgba(255, 255, 255, 0.747);
+            font-size: 14px;
+        }
+
+        body {
+            height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(24, 24, 24);
+        }
+
+        #linguagens {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        #container {
+            width: 320px;
+            background: linear-gradient(145deg, rgb(49, 62, 252), rgb(30, 42, 217));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 25px;
+            border-top-left-radius: 35px;
+            border-bottom-right-radius: 35px;
+            box-shadow: -3px -3px 8px rgba(0, 0, 0, 0.3);
+            transition: all 1s;
+            border: .5px solid black;
+        }
+
+        #avatar {
+            width: 50px;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.253);
+            padding: 5px;
+            margin-bottom: 15px;
+        }
+
+        #infos {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        h1 {
+            font-size: 26px;
+            background: linear-gradient(90deg, #f78a2c, #feb47b);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            text-align: center;
+            margin-top: 10px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        h2 {
+            font-size: 18px;
+            color: rgb(250, 250, 250);
+            margin-bottom: 10px;
+        }
+
+        span {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            padding: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            background-color: rgba(6, 3, 27, 0.3);
+            font-weight: 500;
+            color: rgba(253, 253, 253, 0.85);
+        }
+
+        span:hover {
+            background-color: rgb(56, 118, 209);
+            transition: all 0.5s;
+            cursor: default;
+        }
+
+        span>img {
+            width: 20px;
+        }
+
+        #links {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(247, 247, 247);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        a:hover {
+            color: rgba(0, 193, 252, 0.76);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div>
+            <img src="https://img.icons8.com/?size=100&id=aJPLw-4jUCR3&format=png&color=000000" alt="avatar-perfil"
+                id="avatar">
+        </div>
+        <div id="infos">
+            <h1>Calebe de Andrade</h1>
+            <h2>Desenvolvedor Web</h2>
+            <p>Técnico de Informática com vasta experiência e estudante de Ciência da Computação com forte interesse na
+                área de desenvolvimento e dados. Com estudos atualmente voltados em Desenvolvimento Web com tecnologias
+                como HTML, CSS, JavaScript, além de Python e SQL. Busco meu primeiro estágio em desenvolvimento, onde
+                possa aplicar e expandir meus conhecimentos.</p>
+            <div id="linguagens">
+                <span><img src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000" alt="">HTML</span>
+                <span><img src="https://img.icons8.com/?size=100&id=21278&format=png&color=000000" alt="">CSS</span>
+                <span><img src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000"
+                        alt="">JAVASCRIPT</span>
+                <span><img src="https://img.icons8.com/?size=100&id=anECpXcEIboQ&format=png&color=000000"
+                        alt="">PHP</span>
+                <span><img src="https://img.icons8.com/?size=100&id=MBA5vPE4dGz2&format=png&color=000000"
+                        alt="">SQL</span>
+                <span><img src="https://img.icons8.com/?size=100&id=13441&format=png&color=000000" alt="">PYTHON</span>
+            </div>
+            <div id="links">
+                <a href="https://linkedin.com/in/calebe-andrade" target="_blank">Linkedin</a> |
+                <a href="https://github.com/andcale" target="_blank">GitHub</a> |
+                <a href="https://instagram.com/and.cale/" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
